@@ -1,0 +1,45 @@
+
+
+titles
+------
+ Employee_title Varchar(5) PK 
+ Title varchar(25)
+
+
+departments 
+------
+Dept_no varchar(5) PK
+ Name varchar(25)
+
+
+employees 
+------
+Employee_no INTEGER PK
+Title varchar(5) FK >- titles.Employee_title
+ DOB date,
+ First_name varchar(25),
+ Last_name varchar(25),
+ Gender varchar(1),
+ Hire_date date
+
+
+dept_emp
+-------
+Employee_no Integer PK FK - employees.Employee_no
+Dept_no varchar(5) PK FK - departments.Dept_no
+
+ 
+dept_manager
+--------
+Dept_no varchar(5) PK FK - departments.Dept_no
+Employee_no INT PK FK - employees.Employee_no
+
+ 
+
+salaries
+-------
+Employee_no INT PK FK - employees.Employee_no
+ Salary money
+
+
+ 
