@@ -1,22 +1,22 @@
 
 CREATE TABLE IF NOT EXISTS titles (
 	Employee_title Varchar(5) Primary Key,
-	Title varchar(25)
+	Title varchar(25) NOT NULL
 );
 
 Create Table IF NOT EXISTS departments (
 	Dept_no varchar(5) Primary Key,
-	Name varchar(25)
+	Name varchar(25) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS employees (
 	Employee_no INTEGER Primary Key,
-	Title varchar(5),
+	Title varchar(5) NOT NULL,
 	DOB date,
-	First_name varchar(25),
-	Last_name varchar(25),
+	First_name varchar(25) NOT NULL,
+	Last_name varchar(25) NOT NULL,
 	Gender varchar(1),
-	Hire_date date,
+	Hire_date date NOT NULL,
 	FOREIGN KEY (Title) REFERENCES titles(employee_title)
 );
 
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS dept_manager (
 CREATE TABLE IF NOT EXISTS salaries (
 	Employee_no INT Primary Key,
 	FOREIGN KEY (Employee_no) REFERENCES employees(Employee_no),
-	Salary money
+	Salary money NOT NULL
 );
 
 
